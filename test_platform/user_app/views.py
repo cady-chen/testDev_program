@@ -41,3 +41,8 @@ def logout(request):
     auth.logout(request)  #清除用户的登录信息
     response = HttpResponseRedirect('/') #返回到登录首页
     return response
+
+
+def add_project(request):
+    if request.method == "POST":
+        return render(request, 'add_project.html')

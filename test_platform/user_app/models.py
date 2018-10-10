@@ -16,7 +16,9 @@ class UserAdmin(admin.ModelAdmin):
 admin.site.register(User,UserAdmin)
 
 
-#项目表
+#项目表  class = table; 变量 = 表中的字段
+#下面创建项目表，表名为:user_app_ProjectInfo
+#django提供的字段类型查看在：D:\Program Files\Python\Python36-32\Lib\site-packages\django\db\models\fields目录下的__init__.py文件里
 class ProjectInfo(models.Model):
     title = models.CharField(u"项目名称", blank=False,max_length=1000)
     desc = models.CharField(u"项目描述",blank=True, max_length=5000)

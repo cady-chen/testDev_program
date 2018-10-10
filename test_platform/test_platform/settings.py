@@ -76,8 +76,8 @@ WSGI_APPLICATION = 'test_platform.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.sqlite3',      #django DB的driver地址
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),   #创建的django数据库的名字
     }
 }
 

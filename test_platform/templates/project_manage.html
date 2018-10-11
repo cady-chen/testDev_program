@@ -83,12 +83,16 @@
                 </tr>
               </thead>
               <tbody>
-              {% for projectinfo in projectinfos %}
+              {% for project in projects %}
               <tr>
-                  <td>{{ projectinfo.id }}</td>
-                  <td>{{ projectinfo.title }}</td>
-                  <td>{{ projectinfo.desc }}</td>
-                  <td>{{ projectinfo.status }}</td>
+                  <td>{{ project.id }}</td>
+                  <td>{{ project.name }}</td>
+                  <td>{{ project.desc }}</td>
+                  <td>{{ project.status }}</td>
+                  <td>
+                      <button><a href="update_project">编辑</a></button>
+                      <button><a href="del_project">删除</a></button>
+                  </td>
               </tr>
               {% endfor %}
               </tbody>

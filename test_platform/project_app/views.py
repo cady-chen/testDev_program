@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from project_app.models import Project, Module
+from project_app import Project
+
 
 # Create your views here.
 
@@ -16,3 +17,4 @@ def project_manage(request):
 @login_required
 def add_project(request):
      return render(request,"project_manage.html",{"type": "add"})
+

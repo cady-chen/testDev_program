@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import auth
-from django.contrib.auth.decorators import login_required
-from user_app.models import Project,Module
+#from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 #主要代码逻辑
@@ -26,25 +26,14 @@ def login_action(request):
                 auth.login(request, user)  #记录用户登录状态，用于后续的一些模块操作
                 #return render(request, "project_manage.html")  #若用户名与密码匹配，则登录成功，跳转至下一个页面
                 request.session['user1'] = username #获取登录用户名
-                return HttpResponseRedirect('/project_manage/')  #设置跳转对象
+                return HttpResponseRedirect('/manage/project_manage/')  #设置跳转对象
 
             else:
                 return render(request, "login.html", {"error": "用户名或密码错误"})  #若用户名与密码不匹配，则给出提示
 
-
-@login_required #判断用户是否已经登录，如果未登录，在浏览器中直接输入project_manage的地址，不让访问
-def project_manage(request):
-    project_list = Project.objects.all()
-    username = request.session.get('user1', '')
-    return render(request, "project_manage.html", {"user": username, "projects": project_list})
 
 #退出跳转
 def logout(request):
     auth.logout(request)  #清除用户的登录信息
     response = HttpResponseRedirect('/') #返回到登录首页
     return response
-
-
-def add_project(request):
-    if request.method == "GET":
-        return render(request, 'add_project.html')

@@ -1,10 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import auth
-<<<<<<< HEAD
+
 #from django.contrib.auth.decorators import login_required
-=======
->>>>>>> 459190d854e9f5a5c3acc7fef47b1b7c0c2b5510
 
 
 # Create your views here.
@@ -34,18 +32,8 @@ def login_action(request):
             else:
                 return render(request, "login.html", {"error": "用户名或密码错误"})  #若用户名与密码不匹配，则给出提示
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 459190d854e9f5a5c3acc7fef47b1b7c0c2b5510
-#退出跳转
 def logout(request):
     auth.logout(request)  #清除用户的登录信息
     response = HttpResponseRedirect('/') #返回到登录首页
     return response
-<<<<<<< HEAD
-=======
 
->>>>>>> 459190d854e9f5a5c3acc7fef47b1b7c0c2b5510

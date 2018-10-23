@@ -2,20 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e35f468-c01a-48c4-9430-fa2c731ac063" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test_platform/project_app/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_platform/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_platform/project_app/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_platform/project_app/views/module_views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_platform/templates/module_manage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_platform/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/project_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_platform/project_app/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_platform/project_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_platform/project_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/project_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/project_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/project_app/views/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/templates/add_project.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test_platform/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_platform/templates/project_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/templates/project_manage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/test_platform/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/test_platform/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/test_platform/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/test_platform/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/user_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/user_app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/user_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/user_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_platform/user_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_platform/user_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/user_app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/user_app/migrations/0002_auto_20181011_1106.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/user_app/migrations/0003_auto_20181014_0005.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_platform/user_app/migrations/0003_auto_20181017_1009.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,24 +50,24 @@
     <session id="-1316478505">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="11" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.13" value="1" />
-          <entry key="project.open.time.15" value="2" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="html" value="19" />
-          <entry key="py" value="56" />
+          <entry key="html" value="24" />
+          <entry key="py" value="60" />
           <entry key="sql" value="1" />
           <entry key="sqlite_master" value="1" />
         </counts>
@@ -72,99 +76,32 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="Database Element" value="1" />
-          <entry key="HTML" value="19" />
-          <entry key="Python" value="56" />
+          <entry key="HTML" value="24" />
+          <entry key="Python" value="60" />
           <entry key="Scratch" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="1949" />
-          <entry key="py" value="3865" />
+          <entry key="html" value="2468" />
+          <entry key="py" value="5269" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1949" />
-          <entry key="Python" value="3865" />
+          <entry key="HTML" value="2468" />
+          <entry key="Python" value="5269" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-              <folding>
-                <marker date="1539849759285" expanded="true" signature="62:67" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/project_app/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <marker date="1539862730930" expanded="true" signature="1112:1589" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_platform/templates/project_manage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="111" column="22" lean-forward="true" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
@@ -186,11 +123,14 @@
         <option value="$PROJECT_DIR$/test_platform/user_app/views.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/migrations/0001_initial.py" />
         <option value="$PROJECT_DIR$/test_platform/templates/base.html" />
-        <option value="$PROJECT_DIR$/test_platform/project_app/forms.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/models.py" />
-        <option value="$PROJECT_DIR$/test_platform/templates/project_manage.html" />
-        <option value="$PROJECT_DIR$/test_platform/project_app/urls.py" />
         <option value="$PROJECT_DIR$/test_platform/project_app/views.py" />
+        <option value="$PROJECT_DIR$/test_platform/templates/project_manage.html" />
+        <option value="$PROJECT_DIR$/test_platform/project_app/forms.py" />
+        <option value="$PROJECT_DIR$/test_platform/project_app/views/project_views.py" />
+        <option value="$PROJECT_DIR$/test_platform/project_app/views/module_views.py" />
+        <option value="$PROJECT_DIR$/test_platform/templates/module_manage.html" />
+        <option value="$PROJECT_DIR$/test_platform/project_app/urls.py" />
       </list>
     </option>
   </component>
@@ -200,9 +140,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="323" />
-    <option name="y" value="95" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="70" />
+    <option name="y" value="77" />
     <option name="width" value="1078" />
     <option name="height" value="706" />
   </component>
@@ -211,7 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,7 +173,8 @@
               <item name="testDev_program" type="b2602c69:ProjectViewProjectNode" />
               <item name="testDev_program" type="462c0819:PsiDirectoryNode" />
               <item name="test_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="project_app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="testDev_program" type="b2602c69:ProjectViewProjectNode" />
@@ -242,22 +182,11 @@
               <item name="test_platform" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="testDev_program" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testDev_program" type="462c0819:PsiDirectoryNode" />
-              <item name="test_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="test_platform" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="testDev_program" type="b2602c69:ProjectViewProjectNode" />
-              <item name="testDev_program" type="462c0819:PsiDirectoryNode" />
-              <item name="test_platform" type="462c0819:PsiDirectoryNode" />
-              <item name="user_app" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -268,6 +197,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\workspace\testDev_program\test_platform\project_app\views" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -295,9 +229,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="323" y="95" width="1078" height="706" extended-state="0" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17976424" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27077365" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -437,18 +371,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test_platform/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+        <state relative-caret-position="368">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/views/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="55" column="58" lean-forward="true" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/templates/project_manage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1583">
+          <caret line="108" column="51" lean-forward="true" selection-start-line="108" selection-start-column="51" selection-end-line="108" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/views/module_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="49" column="79" lean-forward="true" selection-start-line="49" selection-start-column="79" selection-end-line="49" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/views/project_views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="43" column="66" lean-forward="true" selection-start-line="43" selection-start-column="66" selection-end-line="43" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/templates/module_manage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
+          <folding>
+            <element signature="e#3460#3487#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="59" lean-forward="true" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test_platform/project_app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        <state relative-caret-position="576">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
           <folding>
-            <marker date="1539849759285" expanded="true" signature="62:67" ph="..." />
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1540275613230" expanded="true" signature="98:104" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="327:328" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="327:333" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="531:532" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="531:537" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="646:647" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="646:652" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="777:778" ph="..." />
+            <marker date="1540275613230" expanded="true" signature="777:783" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_platform/project_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -459,41 +466,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/templates/project_manage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="111" column="22" lean-forward="true" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="36" column="32" lean-forward="true" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <marker date="1539862730930" expanded="true" signature="1112:1589" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_platform/project_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
         </state>
       </provider>
     </entry>

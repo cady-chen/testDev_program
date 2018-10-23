@@ -10,7 +10,7 @@ class Project(models.Model):
     name = models.CharField("项目名称", blank=False,max_length=1000)
     desc = models.CharField("项目描述",blank=True, max_length=5000)
     status = models.BooleanField("项目状态", default=True)
-    create_time = models.DateTimeField("创建时间", auto_now_add=True, blank=True)
+    create_time = models.DateTimeField("创建时间", auto_now_add=True)
 
     def __str__(self):
         return self.name
@@ -21,7 +21,7 @@ class Module(models.Model):
     name = models.CharField("模块名称", blank=False, max_length=1000)
     desc = models.CharField("模块描述", blank=True, max_length=5000)
     project_name = models.ForeignKey(Project, blank=False, null=False, on_delete=models.CASCADE)
-    create_time = models.DateTimeField("创建时间", auto_now_add=True, blank=True)
+    create_time = models.DateTimeField("创建时间", auto_now_add=True)
 
     def __str__(self):
         return self.name

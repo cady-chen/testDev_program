@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Project
-from .forms import ProjectForm
+from project_app.models import Project
+from project_app.forms import AddProjectForm,EditProjectForm
 from django.http import HttpResponseRedirect
 
 # Create your views here.
@@ -18,14 +18,14 @@ def project_manage(request):
 @login_required
 def add_project(request):
     if request.method == 'POST':
-        form = ProjectForm(request.POST)
+        form = AddProjectForm(request.POST)
         if form.is_valid():
             name = form.cleaned_data['name']
             desc = form.cleaned_data['desc']
             Project.objects.create(name=name, desc=desc)
             return redirect('/manage/project_manage')
     else:
-        form = ProjectForm()
+        form = AddProjectForm()
 
     return render(request,"project_manage.html",{"form": form, "type": "add"})
 
@@ -33,16 +33,24 @@ def add_project(request):
 #编辑项目
 @login_required
 def edit_project(request,pid):
-    project_obj = Project.objects.get(id=pid)
     if request.method == 'POST':
-        form = ProjectForm(request.POST,isinstance= project_obj)
+        form = EditProjectForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            desc = form.cleaned_data['desc']
-            status = form.cleaned_data['status']
-            form.save()
-            return HttpResponseRedirect('/manage/project_manage')
+            model = Project.objects.get(id=pid)
+            model.name = form.cleaned_data['name']
+            model.desc = form.cleaned_data['desc']
+            model.status = form.cleaned_data['status']
+            model.save()
+            return HttpResponseRedirect('/manage/project_manage/')
     else:
-        form = ProjectForm()
+        #判断pid是否有传入,若有传入则
+        if pid:
+            form = EditProjectForm(instance=Project.objects.get(id=pid))
     return render(request,'project_manage.html', {'form': form, 'type': "edit"})
 
+
+#删除项目
+@login_required
+def del_project(request, pid):
+    Project.objects.get(id=pid).delete()
+    return HttpResponseRedirect("/manage/project_manage/")

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 
 #from django.contrib.auth.decorators import login_required
 
@@ -32,6 +33,7 @@ def login_action(request):
             else:
                 return render(request, "login.html", {"error": "用户名或密码错误"})  #若用户名与密码不匹配，则给出提示
 
+@login_required
 def logout(request):
     auth.logout(request)  #清除用户的登录信息
     response = HttpResponseRedirect('/') #返回到登录首页

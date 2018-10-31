@@ -14,6 +14,8 @@ def index(request):
     return render(request, "login.html")
 
 #处理登录请求
+
+
 def login_action(request):
     if request.method == 'POST':
         username = request.POST.get("username", "")
@@ -32,6 +34,8 @@ def login_action(request):
 
             else:
                 return render(request, "login.html", {"error": "用户名或密码错误"})  #若用户名与密码不匹配，则给出提示
+    else:
+        return render(request, 'login.html')
 
 @login_required
 def logout(request):

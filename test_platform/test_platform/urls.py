@@ -25,5 +25,7 @@ urlpatterns = [
     path("logout/", views.logout),
     path('manage/', include('project_app.urls')),
     #path("add_project/", views.add_project),
-   path("manage/", include("project_app.urls")),
+    path("manage/", include("project_app.urls")),
+    path("interface/",include("interface_app.urls")),
+
 ]

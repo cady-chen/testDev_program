@@ -9,6 +9,13 @@
 
         <div style="width: 80%; margin-left: 20px;">
             <form action="/debug/" methon="get" class="bs-example bs-example-form" role="form" style="margin-top: 30px">
+                <div class="form-group">
+                    <label>模块：</label>
+                    <select id="module_name">
+                        <option>{{ form.module }}</option>
+                    </select>
+                </div>
+                <br>
                 <div class="input-group">
                     <span class="input-group-addon">名称</span>
                     <input id="req_name" type="text" class="form-control" placeholder="name">
@@ -53,6 +60,7 @@
             <p style="color:#8B8989">说明：以字典的方式设置参数，如：{"id":1, "name":"名称"}</p>
             <div style="width: 100%; height: 60px;">
                 <button type="button" class="btn btn-success" id="send" style="float: right;margin-right: 10px;">调试</button>
+                <button type="button" class="btn btn-success" id="save" style="float: right;margin-right: 10px;">保存</button>
             </div>
 
             </form>
@@ -70,14 +78,18 @@
          $(document).ready(function () {
              $("#send").click(function () {
                  let url = $("#req_url").val();
+                 //用于验证输入的URL的正确性
+                 let urlRegExp = /^((https|http|ftp|rtsp|mms)?:\/\/)+[A-Za-z0-9]+\.[A-Za-z0-9] +[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/;
                  let method = $('input[name="req_method"]:checked').val();
                  let parameter = $("#req_parameter").val();
                  if(url === "") {
                      window.alert("请求的URL不能为空");
+                 }else if(urlRegExp.test(url) === false){ //若输入的URL格式不对，则弹出提示
+                     window.alert("输入的URL有误，请重新输入！")
                  }else if(method === ""){
-                     window.alert("请求的参数不能为空")
+                     window.alert("请求的方法不能为空")
                  }
-                 //发送一个post请求
+                 //发送一个请求
                  $.post("/interface/api_debug/", {
                      "req_url":url,
                      "req_method": method,
@@ -86,6 +98,33 @@
                          $("#result").html(result);
              });
 
+             });
+
+             $("#save").click(function () {
+                 let url = $("#req_url").val();
+                 let urlRegExp = /^((https|http|ftp|rtsp|mms)?:\/\/)+[A-Za-z0-9]+\.[A-Za-z0-9] +[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/;
+                 let method = $('input[name="req_method"]:checked').val();
+                 let parameter = $("#req_parameter").val();
+                 let req_type = $('input[name="req_type"]:checked').val();
+                 let header = $("#req_header").val();
+
+                 if(url === "") {
+                     window.alert("请求的URL不能为空");
+                 }else if(urlRegExp.test(url) === false){ //若输入的URL格式不对，则弹出提示
+                     window.alert("输入的URL有误，请重新输入！")
+                 }else if(method === ""){
+                     window.alert("请求的方法不能为空")
+                 }
+                 //发送一个post请求
+                 $.post("/interface/save_case/", {
+                     "req_url":url,
+                     "req_method": method,
+                     "req_parameter": parameter,
+                     "req_type": req_type,
+                     "header": header
+                     }, function (result) {
+
+                     });
              });
          });
     </script>

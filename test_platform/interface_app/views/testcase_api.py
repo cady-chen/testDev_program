@@ -46,18 +46,25 @@ def api_debug(request):
         method = request.POST.get("req_method", "")
         type = request.POST.get("req_type", "")
         parameter = request.POST.get("req_parameter", "")
+        header = request.POST.get("req_header", "")
 
         if url == "" or method == "" or type == "":
             return common.response_failed("必传参数为空！")
 
+        try:
+            header_dict = json.loads(header.replace("'", "\""))
+            payload = json.loads(parameter.replace("'", "\""))
+        except json.decoder.JSONDecodeError:
+            return common.response_failed("请检查header或参数的格式！")
+
         if method == "get":
-            if type == "form":
+            if type == "from":
                 r = requests.get(url, params = parameter)
             else:
                 return common.response_failed("参数类型错误！")
 
         if method == "post":
-            if type == "form":
+            if type == "from":
                 r = requests.post(url, data=parameter)
             elif type == "json":
                 r = requests.post(url, json=parameter)

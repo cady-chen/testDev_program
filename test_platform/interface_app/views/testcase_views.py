@@ -25,7 +25,6 @@ def case_manage(request):
         #如果页数超出查询范围，取最后一页
         contacts = paginator.page(paginator.num_pages)
 
-
     if request.method == 'GET':
         return render(request, "case_manage.html",
                       {"type": "list",

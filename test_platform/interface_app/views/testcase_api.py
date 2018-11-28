@@ -22,7 +22,7 @@ def get_project_list(request):
             project_dict = {
                 "name": project.name
             }
-            module_list = Module.objects.filter(project_id = project.id)
+            module_list = Module.objects.filter(project_name_id=project.id)
             if len(module_list) != 0:
                 module_name = []
                 for module in module_list:
@@ -247,7 +247,7 @@ def get_case_info(request):
         module_obj = Module.objects.get(id=case_obj.module_id)
         module_name = module_obj.name
 
-        project_name = Project.objects.get(id=module_obj.project_id).name
+        project_name = Project.objects.get(id=module_obj.project_name_id).name
 
         case_info = {
             "modulename": module_name,

@@ -12,7 +12,7 @@ from interface_app.forms import TestCaseForm
 
 #获取用例例表
 def case_manage(request):
-    testcases = TestCase.objects.all()
+    testcases = TestCase.objects.all().order_by("id")
     #定义页面上展示5条用例
     paginator = Paginator(testcases, 5)
     page = request.GET.get('page')

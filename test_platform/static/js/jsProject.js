@@ -40,7 +40,7 @@ var ProjectInit = function (_cmbProject, _cmbModule, defaultProject, defaultModu
 
     function getProjectList() {
         //调用项目服务列表接口
-        $.get("interface/get_project_list", {}, function (resp) {
+        $.get("/interface/get_project_list/", {}, function (resp) {
             if(resp.success === "true"){
                 dataList = resp.data;
                 //遍历项目

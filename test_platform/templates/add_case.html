@@ -1,6 +1,8 @@
 {% extends "case_manage.html" %}
 {% block add_case %}
 
+
+
       <fieldset>
           <div id="legend" class="">
               <legend class="">创建接口用例</legend>
@@ -90,6 +92,7 @@
       <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
       <script type="text/javascript">
 
+
           //初始化项目模块选择框
           ProjectInit('project_name', 'module_name');
 
@@ -116,7 +119,7 @@
                   }
 
                   //调试接口
-                  $.post("/interface/api_debug",{
+                  $.post("/interface/api_debug/",{
                       "req_url": url,
                       "req_method": method,
                       "req_type": type,
@@ -157,7 +160,7 @@
                   }
 
                   //保存用例接口
-                  $.post("/interface/save_case",{
+                  $.post("/interface/save_case/",{
                       "name": name,
                       "req_url": url,
                       "req_method": method,

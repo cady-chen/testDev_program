@@ -73,7 +73,7 @@
                 </tr>
               </thead>
               <tbody>
-              {% for case in testcase %}
+              {% for case in testcases %}
               <tr>
                   <td>{{ case.id }}</td>
                   <td>{{ case.name }}</td>
@@ -94,20 +94,20 @@
         <div class="pagination">
             <span class="step-links">
                 <ul class="pagination">
-                    {% if testcase.has_previous %}
+                    {% if testcases.has_previous %}
                         <li><a href="?case_name={{ case_name }}&page={{ testcases.previous_page_number }}">&laquo;</a></li>
                     {% endif %}
 
-                    <li><a href="#">{{ testcase.number }}</a></li>
+                    <li><a href="#">{{ testcases.number }}</a></li>
 
                     {% if testcase.has_next %}
                         {% if case_name %}
-                            <li><a href="?case_name={{ case_name }}&page={{ testcase.next_page_number }}">&raquo;</a></li>
+                            <li><a href="?case_name={{ case_name }}&page={{ testcases.next_page_number }}">&raquo;</a></li>
                         {% else %}
-                            <li><a href="?page={{ testcase.next_page_number }}">&raquo;</a></li>
+                            <li><a href="?page={{ testcases.next_page_number }}">&raquo;</a></li>
                         {% endif %}
                     {% endif %}
-                    <li><a href="#">共: {{ testcase.paginator.num_pages }} 页</a></li>
+                    <li><a href="#">共: {{ testcases.paginator.num_pages }} 页</a></li>
                 </ul>
             </span>
         </div>

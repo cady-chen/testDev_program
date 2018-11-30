@@ -37,8 +37,8 @@
               <li><a href="/manage/module_manage/" id="module_manage">模块管理</a></li>
           </ul>
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#" id="case_manage">用例管理</a></li>
-            <li><a href="/interface/task_manage/" id="task_manage">任务管理</a></li>
+            <li class="active"><a href="/interface/case_manage/" id="case_manage">用例管理</a></li>
+            <li><a href="#" id="task_manage">任务管理</a></li>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">mockserver</a></li>
@@ -49,9 +49,9 @@
         {% if type == 'list' %}
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-          <h3 class="sub-header">用例列表
+          <h3 class="sub-header">任务列表
               <button type="button" class="btn btn-primary" style="float: right;"
-                      onclick="window.location.href='/interface/add_case'">创建</button>
+                      onclick="window.location.href='/interface/add_task'">创建</button>
           </h3>
           <div class="table-responsive">
 
@@ -66,23 +66,31 @@
                 <tr>
                   <th>id</th>
                   <th>名称</th>
-                  <th>URL</th>
-                  <th>方法</th>
+                  <th>描述</th>
+                  <th>状态</th>
                   <th>创建时间</th>
                   <th>操作</th>
                 </tr>
               </thead>
               <tbody>
-              {% for case in testcases %}
+              {% for task in taskcases %}
               <tr>
-                  <td>{{ case.id }}</td>
-                  <td>{{ case.name }}</td>
-                  <td>{{ case.url }}</td>
-                  <td>{{ case.req_method }}</td>
-                  <td>{{ case.create_time | date:"Y-m-d H:i:s" }}</td>
+                  <td>{{ task.id }}</td>
+                  <td>{{ task.name }}</td>
+                  <td>{{ task.describe }}</td>
+                  {% if task.status == 0 %}
+                  <td>未执行</td>
+                  {% endif %}
+                  {% if task.status == 1 %}
+                  <td>执行中</td>
+                  {% endif %}
+                  {% if task.status == 2 %}
+                  <td>已执行</td>
+                  {% endif %}
+                  <td>{{ task.create_time | date:"Y-m-d H:i:s" }}</td>
                   <td>
-                      <a href="/interface/debug_case/{{ case.id }}/">调试</a>
-                      <a href="/interface/delete_case/{{ case.id }}/">删除</a>
+                      <a href="/interface/debug_case/{{ task.id }}/">调试</a>
+                      <a href="/interface/delete_case/{{ task.id }}/">删除</a>
                   </td>
               </tr>
               {% endfor %}
@@ -90,64 +98,20 @@
             </table>
           </div>
 
-        <!--列表分页器-->
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-            <!-- 如果testcase元素有上页，则显示上一页箭头且修改链接地址 -->
-                {% if testcases.has_previous %}
-                    <li>
-                        <a href="?page={{ testcases.previous_page_number }}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                {% endif %}
-
-               <!-- 生成导航标签页码 -->
-                {% for pg in testcases.paginator.page_range %}
-                    {% if testcases.number == pg %}
-                        <li class="active">
-                    <!-- 将与view传来的页码相等的导航页码高亮 -->
-                          <a href="?page={{ pg }}">{{ pg }}</a>
-                        </li>
-                    {% else %}
-                        <li><a href="?page={{ pg }}">{{ pg }}</a></li>
-                    {% endif %}
-                {% endfor %}
-
-                <!-- 如果testcases有下一页，则显示下一页箭头且修改链接地址 -->
-                {% if testcases.has_next %}
-                    <li><a href="?page={{ testcases.next_page_number }}" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                {% endif %}
-            </ul>
-        </nav>
         </div>
       {% endif %}
 
 
-      <!--添加（调试）页面-->
+      <!--添加任务页面-->
       {% if type == 'add' %}
        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="row">
-              {% block add_case %}
-
+              {% block add_task %}
+              <!-- add_task.html -->
               {% endblock %}
 
           </div>
        </div>
-      {% endif %}
-
-      <!--添加（调试）用例页面-->
-      {% if type == 'debug' %}
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <div class="row">
-              {% block debug_case %}
-
-              {% endblock %}
-           </div>
-      </div>
       {% endif %}
 
       </div>

@@ -1,8 +1,11 @@
 import json
 import requests
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+#导入三个模块
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from interface_app.models import TestCase
 from interface_app.forms import TestCaseForm
 
@@ -12,10 +15,10 @@ from interface_app.forms import TestCaseForm
 
 #获取用例例表
 def case_manage(request):
-    testcases = TestCase.objects.all().order_by("id")
+    testcases = TestCase.objects.all().order_by("id") #查询结果集
     #定义页面上展示5条用例
-    paginator = Paginator(testcases, 5)
-    page = request.GET.get('page')
+    paginator = Paginator(testcases, 5) #实例化结果集，每页展示5条数据
+    page = request.GET.get('page') #接收网页中的page值
     try:
         contacts = paginator.page(page)
     except PageNotAnInteger:
@@ -39,7 +42,7 @@ def search_case_name(request):
     if request.method == "GET":
         case_name = request.GET.get('case_name', "")
         cases = TestCase.objects.filter(name__contains=case_name)
-        paginator = Paginator(cases, 5)
+        paginator = Paginator(cases, 10)
         page = request.GET.get('page')
         try:
             contacts = paginator.page(page)
@@ -98,4 +101,13 @@ def api_debug(request):
         return HttpResponse(r.text)
     else:
         return render(request, "api_debug.html", {"type": "debug"})
+
+
+#删除用例
+@login_required
+def delete_case(request,cid):
+    TestCase.objects.get(id=cid).delete()
+    return HttpResponseRedirect("/interface/case_manage/")
+
+
 
